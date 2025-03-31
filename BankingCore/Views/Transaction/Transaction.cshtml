@@ -1,0 +1,42 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model BankingCore.Models.PaymentCardModel
+
+<h2>Enter Card Details</h2>
+
+<form asp-action="Register" method="post">
+   
+    <div class="form-group">
+        <label asp-for="Options">Payment Type</label>
+        <select asp-for="SelectedOptionId" asp-items="@(new SelectList(Model.Options, "Id", "Name"))">
+            <option value="">-- Payment --</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label asp-for="CardholderName"></label>
+        <input asp-for="CardholderName" />
+        <span asp-validation-for="CardholderName"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="CardNumber"></label>
+        <input asp-for="CardNumber" />
+        <span asp-validation-for="CardNumber"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ExpirationMonth"></label>
+        <input asp-for="ExpirationMonth" type="number" />
+        <span asp-validation-for="ExpirationMonth"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ExpirationYear"></label>
+        <input asp-for="ExpirationYear" type="number" />
+        <span asp-validation-for="ExpirationYear"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit Payment</button>
+</form>
