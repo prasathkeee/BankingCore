@@ -65,11 +65,11 @@ namespace BankingCore.Controllers
         {
             var customer = new CardTransactionModel
             {
-                CustomerId = "",
-                TransactionId = model.FirstName,
-                PaymentMethodId = model.LastName,
-                TransactionType = model.Email,
-                OrderId = model.Phone,
+                CustomerId = 1,
+                TransactionId =1,
+                PaymentMethodId =1,
+                TransactionType = "",
+                OrderId = "",
                 TransactionStatus = "",
                 TransactionReferenceID = "",
                 TransactionDate = DateTime.Now.ToString(),
